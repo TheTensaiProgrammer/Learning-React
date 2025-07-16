@@ -1,5 +1,6 @@
-import "./List.css";
+import "./styles.list.css";
 import { useState } from "react";
+import { Button } from "../../../../componets/button";
 import image1 from "./images/The Godfather.jpeg";
 import image2 from "./images/Schindler's List.jpg";
 import image3 from "./images/Casablanca.jpg";
@@ -31,10 +32,14 @@ const List = () => {
         {massiv
           .filter((item) => item.name.includes(value))
           .map((item) => (
-            <li key={item.id} style={{ marginTop: 4 }} className="debug">
-              <div>{item.pic && <img src={item.pic} />}</div>
-              <div>{item.name}</div>
-            </li>
+            <Button
+              onClick={() => (document.location.href = `./#/TheGodfather/`)}
+            >
+              <li key={item.id} style={{ marginTop: 4 }} className="debug">
+                <div>{item.pic && <img src={item.pic} />}</div>
+                <div>{item.name}</div>
+              </li>
+            </Button>
           ))}
       </ul>
     </div>
