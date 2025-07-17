@@ -1,17 +1,19 @@
 //import reactLogo from './assets/react.svg'
 import "./App.css";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { Main } from "./pages/main";
 import { TheGodfather } from "./pages/TheGodfather";
+import { CommentSection } from "./pages/commentSection";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />} />
+        <Route path="/" index element={<Main />} />
         <Route path="/TheGodfather" element={<TheGodfather />} />
+        <Route path="/commentSection" element={<CommentSection />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

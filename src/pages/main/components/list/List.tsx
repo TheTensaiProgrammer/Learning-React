@@ -1,6 +1,7 @@
 import "./styles.list.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "../../../../componets/button";
+import { useNavigate } from "react-router";
 import image1 from "./images/The Godfather.jpeg";
 import image2 from "./images/Schindler's List.jpg";
 import image3 from "./images/Casablanca.jpg";
@@ -24,6 +25,10 @@ const massiv = [
 const List = () => {
   const [value, setValue] = useState("");
 
+  const navigate = useNavigate();
+
+  console.log("list render");
+
   return (
     <div>
       <input value={value} onChange={(e) => setValue(e.currentTarget.value)} />
@@ -32,10 +37,8 @@ const List = () => {
         {massiv
           .filter((item) => item.name.includes(value))
           .map((item) => (
-            <Button
-              onClick={() => (document.location.href = `./#/TheGodfather/`)}
-            >
-              <li key={item.id} style={{ marginTop: 4 }} className="debug">
+            <Button key={item.id} onClick={() => navigate(`/TheGodfather`)}>
+              <li style={{ marginTop: 4 }} className="debug">
                 <div>{item.pic && <img src={item.pic} />}</div>
                 <div>{item.name}</div>
               </li>

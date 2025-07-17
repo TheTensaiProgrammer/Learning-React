@@ -1,0 +1,31 @@
+.comment-block {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.04);
+  max-width: 600px;
+  width: 100%;
+  color: #2d2d2d;
+}
+
+.comment-block .comment-author {
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 6px;
+}
+
+.comment-block .comment-text {
+  color: #444;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.comment-block .comment-meta {
+  font-size: 0.92rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
